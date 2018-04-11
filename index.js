@@ -1,4 +1,5 @@
 import { AppRegistry } from 'react-native';
-import App from './App';
+import Router from './js/Router';
+import DrawerPage from "./js/DrawerPage";
 
-AppRegistry.registerComponent('ExpressProject', () => App);
+AppRegistry.registerComponent('ExpressProject', () => DrawerPage);
