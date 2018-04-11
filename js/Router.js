@@ -2,18 +2,25 @@ import {StackNavigator} from "react-navigation";
 import DrawerPage from "./DrawerPage";
 import SettingPage from "./page/SettingPage";
 import OrderPage from "./page/OrderPage";
+import WaitingOrderPage from "./page/WaitingOrderPage";
 
 const Router = StackNavigator({
-    Drawer: {
-        title:'Drawer',
-        screen: DrawerPage,
-    },
     Order:{
-        screen:OrderPage
+        screen:OrderPage,
+        navigationOptions:{
+
+        }
     },
     Setting: {
-        screen: SettingPage
-    },
+        screen: SettingPage,
+        navigationOptions:{
 
+        }
+    },
+    WaitingOrder:{
+        screen:WaitingOrderPage,
+        navigationOptions:{
+        }
+    }
 });
-module.exports = Router;
+export default Router;

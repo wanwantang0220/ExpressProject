@@ -3,22 +3,23 @@ import {View, Text, TouchableOpacity, StyleSheet, Button,Image} from 'react-nati
 import {StackNavigator} from 'react-navigation';
 import HomePage from "./HomePage";
 import ThirdScreenPage from './ThirdScreenPage';
+import WaitingOrderPage from "./WaitingOrderPage";
 
 
 const MyStackNaviPage = StackNavigator({
-    Main: {
+    Home: {
         screen: HomePage,
-        navigationOptions: ({navigation}) => ({
-            headerTitleStyle: {
-                alignSelf: 'center',
-            },
-            headerLeft: (
-                <Button
-                    title='back'
-                    onPress={() => navigation.navigate('DrawerOpen')}
-                />
-            ),
-        }),
+        // navigationOptions: ({navigation}) => ({
+        //     headerTitleStyle: {
+        //         alignSelf: 'center',
+        //     },
+        //     headerLeft: (
+        //         <Button
+        //             title='back'
+        //             onPress={() => navigation.navigate('DrawerOpen')}
+        //         />
+        //     ),
+        // }),
 
     },
     Third: {
@@ -34,6 +35,9 @@ const MyStackNaviPage = StackNavigator({
                 />
             ),
         }),
+    },
+    WaitingOrder:{
+        screen:WaitingOrderPage
     }
 
 })

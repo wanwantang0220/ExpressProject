@@ -22,34 +22,7 @@ const {width, height} = Dimensions.get('window');
 export default class HomePage extends Component {
 
     static navigationOptions = {
-        title: '首页',
-        headerTitleStyle: {
-            alignSelf: 'center',
-            textAlign: 'center',
-            flexGrow: 1,
-            color: '#ffcd32',
-            fontFamily: 'Montserrat-Regular',
-        },
-        headerRight: <View/>,
-        headerStyle: {
-            elevation: 0,
-            height: 50,
-            backgroundColor: '#00000000',
-            paddingLeft: 20,
-            paddingRight: 0,
-        },
-        cardStack: {
-            gesturesEnabled: false
-        },
-        headerTitleStyle: {
-            alignSelf: 'center',
-        },
-        headerLeft: (
-            <Button
-                title='back'
-                onPress={() => navigation.navigate('DrawerOpen')}
-            />
-        ),
+        header: null,
         drawerLabel: '首页',
         drawerIcon: ({tintColor}) => (
             <Image
@@ -59,8 +32,49 @@ export default class HomePage extends Component {
         ),
     }
 
+    // static navigationOptions = {
+    //     title: '首页',
+    //     headerTitleStyle: {
+    //         alignSelf: 'center',
+    //         textAlign: 'center',
+    //         flexGrow: 1,
+    //         color: '#ffcd32',
+    //         fontFamily: 'Montserrat-Regular',
+    //     },
+    //     headerRight: <View/>,
+    //     headerStyle: {
+    //         elevation: 0,
+    //         height: 50,
+    //         backgroundColor: '#00000000',
+    //         paddingLeft: 20,
+    //         paddingRight: 0,
+    //     },
+    //     cardStack: {
+    //         gesturesEnabled: false
+    //     },
+    //     headerTitleStyle: {
+    //         alignSelf: 'center',
+    //     },
+    //     headerLeft: (
+    //         <Button
+    //             title='back'
+    //             onPress={() => navigation.navigate('DrawerOpen')}
+    //         />
+    //     ),
+    //     header:null,
+    //     drawerLabel: '首页',
+    //     drawerIcon: ({tintColor}) => (
+    //         <Image
+    //             source={require('../../img/ic_find_hot.png')}
+    //             style={[styles.icon, {tintColor: tintColor}]}
+    //         />
+    //     ),
+    // }
+
 
     render() {
+
+        const {navigate} = this.props.navigation;
 
         return (
             <View style={{flex: 1, alignItems: 'center'}}>
@@ -70,27 +84,28 @@ export default class HomePage extends Component {
                     backgroundColor={'#00000000'} //状态栏的背景色
                     translucent={true}//指定状态栏是否透明。设置为true时，应用会在状态栏之下绘制（即所谓“沉浸式”——被状态栏遮住一部分）。常和带有半透明背景色的状态栏搭配使用。
                     barStyle={'light-content'} // enum('default', 'light-content', 'dark-content')
-                >
-                </StatusBar>
+                />
                 <View>
                     <ImageBackground
                         style={[styles.image]}
                         source={require('../../img/banner3.jpg')}>
                         <TouchableOpacity onPress={() => {
                             //点击打开抽屉
-                            this.props.navigation.navigate('DrawerOpen')
+                            navigate('DrawerOpen')
                         }}>
                             <Text style={{color: '#ffffff', marginTop: 30, marginLeft: 10}}>Back</Text>
                         </TouchableOpacity>
                     </ImageBackground>
                 </View>
-                <View style={{marginTop: 10, marginLeft: 15,width:width}}>
+                <View style={{marginTop: 10, marginLeft: 15, width: width}}>
                     <Text style={{fontSize: 18, color: '#333333'}}>张xxx，你好</Text>
                     <Text style={{fontSize: 14, color: '#7A7A7A'}}>无锡市新吴区新安站</Text>
                 </View>
 
                 <View style={{flexDirection: 'row', marginLeft: 15, marginRight: 15, marginTop: 20}}>
-                    <View style={[styles.viewBg, {flex: 1, marginLeft: 15}]}>
+                    <TouchableOpacity
+                        style={[styles.viewBg, {flex: 1, marginLeft: 15}]}
+                        onPress={() => this.props.navigation.navigate('WaitingOrder')}>
                         <Text style={{
                             marginLeft: 15,
                             marginTop: 15,
@@ -100,7 +115,7 @@ export default class HomePage extends Component {
                         }}>接单</Text>
                         <Text style={{marginLeft: 15, marginTop: 5, fontSize: 14, color: '#7A7A7A'}}>1/10</Text>
                         <Text style={{marginLeft: 15, marginTop: 15, color: '#7A7A7A'}}>......</Text>
-                    </View>
+                    </TouchableOpacity>
                     <View style={[styles.viewBg, {flex: 1, marginLeft: 10, marginRight: 15}]}>
                         <Text style={{
                             marginLeft: 15,
@@ -135,9 +150,9 @@ export default class HomePage extends Component {
                         <Text style={{marginLeft: 15, marginTop: 5, fontSize: 14, color: '#7A7A7A'}}>10</Text>
                     </View>
                 </View>
-                <View style={{width: width,flexDirection:'row'}}>
-                    <View style={[styles.viewTextBg, {marginTop: 20, marginLeft:50}]}>
-                        <Text style={{color: '#333333',textAlign:'center',     }}>最新喜来消息在这里显示   > </Text>
+                <View style={{width: width, flexDirection: 'row'}}>
+                    <View style={[styles.viewTextBg, {marginTop: 20, marginLeft: 50}]}>
+                        <Text style={{color: '#333333', textAlign: 'center',}}>最新喜来消息在这里显示 > </Text>
                     </View>
                 </View>
             </View>

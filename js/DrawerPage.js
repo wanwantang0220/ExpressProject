@@ -6,14 +6,15 @@ import MyStackNaviPage from './page/MyStackNaviPage';
 import SettingPage from './page/SettingPage';
 import HomePage from "./page/HomePage";
 import OrderPage from './page/OrderPage';
+import WaitingOrderPage from "./page/WaitingOrderPage";
 
 const {width, height} = Dimensions.get('window');
 /**
  * 侧滑根目录
  */
 const Drawer = DrawerNavigator({
-    Home: {
-        screen: HomePage
+    MyStackNaviPage:{
+      screen:MyStackNaviPage
     },
     Order: {
         screen: OrderPage
