@@ -1,12 +1,28 @@
 import React, {Component} from 'react';
-import {View, Text, TouchableOpacity, StyleSheet, Button,Image} from 'react-native';
-import { StackNavigator  } from 'react-navigation';
+import {
+    View,
+    Text,
+    TouchableOpacity,
+    StyleSheet,
+    Button,
+    Image,
+    Dimensions,
+    StatusBar,
+    ImageBackground,
+    PixelRatio
+} from 'react-native';
+import {StackNavigator} from 'react-navigation';
+
+const {width, height} = Dimensions.get('window');
 
 
+/**
+ * 首页
+ */
 export default class HomePage extends Component {
 
     static navigationOptions = {
-        title:'首页',
+        title: '首页',
         headerTitleStyle: {
             alignSelf: 'center',
             textAlign: 'center',
@@ -34,8 +50,8 @@ export default class HomePage extends Component {
                 onPress={() => navigation.navigate('DrawerOpen')}
             />
         ),
-        drawerLabel:'首页',
-        drawerIcon: ({ tintColor }) => (
+        drawerLabel: '首页',
+        drawerIcon: ({tintColor}) => (
             <Image
                 source={require('../../img/ic_find_hot.png')}
                 style={[styles.icon, {tintColor: tintColor}]}
@@ -44,17 +60,86 @@ export default class HomePage extends Component {
     }
 
 
+    render() {
 
-    render(){
+        return (
+            <View style={{flex: 1, alignItems: 'center'}}>
+                <StatusBar
+                    animated={true} //指定状态栏的变化是否应以动画形式呈现。目前支持这几种样式：backgroundColor, barStyle和hidden
+                    hidden={false}  //是否隐藏状态栏。
+                    backgroundColor={'#00000000'} //状态栏的背景色
+                    translucent={true}//指定状态栏是否透明。设置为true时，应用会在状态栏之下绘制（即所谓“沉浸式”——被状态栏遮住一部分）。常和带有半透明背景色的状态栏搭配使用。
+                    barStyle={'light-content'} // enum('default', 'light-content', 'dark-content')
+                >
+                </StatusBar>
+                <View>
+                    <ImageBackground
+                        style={[styles.image]}
+                        source={require('../../img/banner3.jpg')}>
+                        <TouchableOpacity onPress={() => {
+                            //点击打开抽屉
+                            this.props.navigation.navigate('DrawerOpen')
+                        }}>
+                            <Text style={{color: '#ffffff', marginTop: 30, marginLeft: 10}}>Back</Text>
+                        </TouchableOpacity>
+                    </ImageBackground>
+                </View>
+                <View style={{marginTop: 10, marginLeft: 15,width:width}}>
+                    <Text style={{fontSize: 18, color: '#333333'}}>张xxx，你好</Text>
+                    <Text style={{fontSize: 14, color: '#7A7A7A'}}>无锡市新吴区新安站</Text>
+                </View>
 
-        return(
-            <View style={styles.container}>
-                <TouchableOpacity onPress={()=>{
-                    //点击打开抽屉
-                    this.props.navigation.navigate('DrawerOpen')
-                }}>
-                    <Text>打开侧滑栏</Text>
-                </TouchableOpacity>
+                <View style={{flexDirection: 'row', marginLeft: 15, marginRight: 15, marginTop: 20}}>
+                    <View style={[styles.viewBg, {flex: 1, marginLeft: 15}]}>
+                        <Text style={{
+                            marginLeft: 15,
+                            marginTop: 15,
+                            fontSize: 20,
+                            fontWeight: 'bold',
+                            color: '#333333'
+                        }}>接单</Text>
+                        <Text style={{marginLeft: 15, marginTop: 5, fontSize: 14, color: '#7A7A7A'}}>1/10</Text>
+                        <Text style={{marginLeft: 15, marginTop: 15, color: '#7A7A7A'}}>......</Text>
+                    </View>
+                    <View style={[styles.viewBg, {flex: 1, marginLeft: 10, marginRight: 15}]}>
+                        <Text style={{
+                            marginLeft: 15,
+                            marginTop: 15,
+                            fontSize: 20,
+                            fontWeight: 'bold',
+                            color: '#333333'
+                        }}>打单</Text>
+                        <Text style={{marginLeft: 15, marginTop: 5, fontSize: 14, color: '#7A7A7A'}}>1/10</Text>
+                        <Text style={{marginLeft: 15, marginTop: 15, color: '#7A7A7A'}}>......</Text>
+                    </View>
+                </View>
+
+                <View style={{flexDirection: 'row', marginLeft: 15, marginRight: 15, marginTop: 10}}>
+                    <View style={[styles.viewBg, {flex: 1, marginLeft: 15}]}>
+                        <Text style={{
+                            marginLeft: 15,
+                            marginTop: 15,
+                            fontSize: 20,
+                            fontWeight: 'bold',
+                            color: '#333333'
+                        }}>发件</Text>
+                    </View>
+                    <View style={[styles.viewBg, {flex: 1, marginLeft: 10, marginRight: 15}]}>
+                        <Text style={{
+                            marginLeft: 15,
+                            marginTop: 15,
+                            fontSize: 20,
+                            fontWeight: 'bold',
+                            color: '#333333'
+                        }}>下单</Text>
+                        <Text style={{marginLeft: 15, marginTop: 5, fontSize: 14, color: '#7A7A7A'}}>10</Text>
+                    </View>
+                </View>
+                <View style={{width: width,flexDirection:'row'}}>
+                    <View style={[styles.viewTextBg, {marginTop: 20, marginLeft:50}]}>
+                        <Text style={{color: '#333333',textAlign:'center',     }}>最新喜来消息在这里显示   > </Text>
+                    </View>
+                </View>
             </View>
         )
     }
@@ -63,12 +148,43 @@ export default class HomePage extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex:1,
-        justifyContent:'center',
-        alignItems:'center'
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     icon: {
         width: 24,
         height: 24,
     },
+    image: {
+        width: width,
+        height: 180,
+        // 设置图片填充模式
+        // resizeMode: 'stretch'
+    },
+    bannerBg: {
+        width: width,
+        height: 150,
+    },
+    viewBg: {
+        width: 120,
+        height: 120,
+        backgroundColor: '#ffffff',
+        shadowColor: '#CFCFCF',
+        borderRadius: 25,
+        elevation: 50,
+    },
+    viewTextBg: {
+        width: 220,
+        height: 30,
+        backgroundColor: '#ffffff',
+        borderColor: '#080808',
+        justifyContent: 'center',
+        borderRadius: 15,
+        borderStyle: 'solid',
+        borderLeftWidth: 1 / PixelRatio.get(),
+        borderRightWidth: 1 / PixelRatio.get(),
+        borderBottomWidth: 1 / PixelRatio.get(),
+        borderTopWidth: 1 / PixelRatio.get(),
+    }
 });
