@@ -5,7 +5,7 @@ import HomePage from "./HomePage";
 import ThirdScreenPage from './ThirdScreenPage';
 import WaitingOrderPage from "./WaitingOrderPage";
 import PrintOrderPage from './PrintOrderPage';
-
+import PrintOrderDetailPage from './PrintOrderDetailPage';
 
 const MyStackNaviPage = StackNavigator({
     Home: {
@@ -42,6 +42,9 @@ const MyStackNaviPage = StackNavigator({
     },
     PrintOrder:{
         screen:PrintOrderPage
+    },
+    PrintOrderDetail:{
+        screen:PrintOrderDetailPage
     }
 })
 

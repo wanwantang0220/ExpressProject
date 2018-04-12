@@ -47,8 +47,10 @@ export default class HeaderTitle extends Component {
                         style={[styles.image, {flexDirection: 'row', width: width,}]}
                         source={require('../../img/banner3.jpg')}>
                         <TouchableOpacity
-                            style={{flex: 1}}
-                            onPress={() => this.props.onBack }>
+                            style={{flex: 1.5}}
+                            activeOpacity={0.85}
+                            underlayColor={'#00000000'}
+                            onPress={() => this.props.onBack() }>
                             <Text style={{color: '#ffffff', marginTop: 30, paddingLeft: 10}}>首页</Text>
 
                         </TouchableOpacity>
@@ -58,7 +60,8 @@ export default class HeaderTitle extends Component {
                             color: '#ffffff',
                             fontSize: 20,
                             marginTop: 30,
-                            textAlign: 'center'
+                            textAlign: 'center',
+                            paddingRight:40
                         }}>{this.props.title} </Text>
                     </ImageBackground>
                 </View>

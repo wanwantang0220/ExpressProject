@@ -30,16 +30,12 @@ export default class WaitingOrderPage extends Component {
 
     constructor(props) {
         super(props);
-        this.props.navigation.state.key = 'WaitingOrder'; //set the key's name that you want
+        // this.props.navigation.state.key = 'WaitingOrder'; //set the key's name that you want
     }
 
-
-    componentDidMount() {
-
-    }
 
     render() {
-        const {navigate} = this.props.navigation;
+
         return (
             <View style={styles.waitordercontainer}>
                 <HeaderTitle title='待接单'  onBack={()=> this.props.navigation.goBack()}/>
