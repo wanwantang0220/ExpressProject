@@ -4,6 +4,7 @@ import {StackNavigator} from 'react-navigation';
 import HomePage from "./HomePage";
 import ThirdScreenPage from './ThirdScreenPage';
 import WaitingOrderPage from "./WaitingOrderPage";
+import PrintOrderPage from './PrintOrderPage';
 
 
 const MyStackNaviPage = StackNavigator({
@@ -38,8 +39,10 @@ const MyStackNaviPage = StackNavigator({
     },
     WaitingOrder:{
         screen:WaitingOrderPage
+    },
+    PrintOrder:{
+        screen:PrintOrderPage
     }
-
 })
 
 export default MyStackNaviPage;

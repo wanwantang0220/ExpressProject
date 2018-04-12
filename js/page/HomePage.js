@@ -116,7 +116,8 @@ export default class HomePage extends Component {
                         <Text style={{marginLeft: 15, marginTop: 5, fontSize: 14, color: '#7A7A7A'}}>1/10</Text>
                         <Text style={{marginLeft: 15, marginTop: 15, color: '#7A7A7A'}}>......</Text>
                     </TouchableOpacity>
-                    <View style={[styles.viewBg, {flex: 1, marginLeft: 10, marginRight: 15}]}>
+                    <TouchableOpacity style={[styles.viewBg, {flex: 1, marginLeft: 10, marginRight: 15}]}
+                                      onPress={()=>this.props.navigation.navigate('PrintOrder')}>
                         <Text style={{
                             marginLeft: 15,
                             marginTop: 15,
@@ -126,7 +127,7 @@ export default class HomePage extends Component {
                         }}>打单</Text>
                         <Text style={{marginLeft: 15, marginTop: 5, fontSize: 14, color: '#7A7A7A'}}>1/10</Text>
                         <Text style={{marginLeft: 15, marginTop: 15, color: '#7A7A7A'}}>......</Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
 
                 <View style={{flexDirection: 'row', marginLeft: 15, marginRight: 15, marginTop: 10}}>
