@@ -85,12 +85,12 @@ export default class PrintOrderDetailPage extends Component {
                             <Text style={[pOrderDetailStyles.text4, {textAlign: 'right'}]}>2kg</Text>
                         </View>
                         <View style={[pOrderDetailStyles.view4, {justifyContent: 'flex-end'}]}>
-                            <View style={[pOrderDetailStyles.view5]}>
+                            <TouchableOpacity style={[pOrderDetailStyles.view5]}>
                                 <Text style={[pOrderDetailStyles.text5]}>转移订单</Text>
-                            </View>
-                            <View style={[pOrderDetailStyles.view5, {marginLeft: 10}]}>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={[pOrderDetailStyles.view5, {marginLeft: 10}]}>
                                 <Text style={[pOrderDetailStyles.text5]}>取消订单</Text>
-                            </View>
+                            </TouchableOpacity>
                         </View>
                     </View>
 
@@ -99,9 +99,7 @@ export default class PrintOrderDetailPage extends Component {
                             activeOpacity={0.7}
                             underlayColor={'red'}
                             style={[pOrderDetailStyles.view5]}
-                            onPress={() => {
-                                console.log('下一步')
-                            }}
+                            onPress={() => this.props.navigation.navigate('TransportDetail')}
                             underlayColor="#E1F6FF">
                             <Text style={[pOrderDetailStyles.text6]}>下一步</Text>
                         </TouchableOpacity>

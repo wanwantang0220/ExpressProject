@@ -6,6 +6,7 @@ import ThirdScreenPage from './ThirdScreenPage';
 import WaitingOrderPage from "./WaitingOrderPage";
 import PrintOrderPage from './PrintOrderPage';
 import PrintOrderDetailPage from './PrintOrderDetailPage';
+import TransportDetailPage from "./TransportDetailPage";
 
 const MyStackNaviPage = StackNavigator({
     Home: {
@@ -45,6 +46,9 @@ const MyStackNaviPage = StackNavigator({
     },
     PrintOrderDetail:{
         screen:PrintOrderDetailPage
+    },
+    TransportDetail: {
+        screen: TransportDetailPage
     }
 })
 
