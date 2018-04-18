@@ -47,6 +47,17 @@ export default class PrintOrderPage extends Component {
                         <Text style={[printStyles.text3]}>预约时间 今天18:00-19:00</Text>
                     </View>
                 </View>
+                <View style={[printStyles.itemBg, {flexDirection: 'column'}]}>
+                    <TouchableOpacity
+                        style={{flex: 1}}
+                        activeOpacity={0.85}
+                        underlayColor='white'
+                        onPress={()=>{
+                            //蓝牙
+                        }}>
+                        <Text style={[printStyles.text4]}>蓝牙</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         )
     }

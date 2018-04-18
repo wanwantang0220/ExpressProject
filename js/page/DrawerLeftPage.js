@@ -12,7 +12,7 @@ export default class DrawerLeftPage extends Component {
     render(){
 
         return(
-            <View style={styles.container}>
+            <View style={styles.container}>npm i -S react-native-bluetooth-serial
                 <TouchableOpacity onPress={()=>{
                     //点击关闭侧滑
                     this.props.navigation.navigate('DrawerClose')
