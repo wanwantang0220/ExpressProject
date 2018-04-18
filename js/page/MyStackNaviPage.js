@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, TouchableOpacity, StyleSheet, Button,Image} from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet, Button, Image} from 'react-native';
 import {StackNavigator} from 'react-navigation';
 import HomePage from "./HomePage";
 import ThirdScreenPage from './ThirdScreenPage';
@@ -7,6 +7,7 @@ import WaitingOrderPage from "./WaitingOrderPage";
 import PrintOrderPage from './PrintOrderPage';
 import PrintOrderDetailPage from './PrintOrderDetailPage';
 import TransportDetailPage from "./TransportDetailPage";
+import BluetoothPage from './BluetoothPage';
 
 const MyStackNaviPage = StackNavigator({
     Home: {
@@ -38,17 +39,20 @@ const MyStackNaviPage = StackNavigator({
             ),
         }),
     },
-    WaitingOrder:{
-        screen:WaitingOrderPage
+    WaitingOrder: {
+        screen: WaitingOrderPage
     },
-    PrintOrder:{
-        screen:PrintOrderPage
+    PrintOrder: {
+        screen: PrintOrderPage
     },
-    PrintOrderDetail:{
-        screen:PrintOrderDetailPage
+    PrintOrderDetail: {
+        screen: PrintOrderDetailPage
     },
     TransportDetail: {
         screen: TransportDetailPage
+    },
+    Bluetooth: {
+        screen: BluetoothPage
     }
 })
 

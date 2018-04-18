@@ -157,9 +157,10 @@ export default class HomePage extends Component {
                     </View>
                 </View>
                 <View style={{width: width, flexDirection: 'row'}}>
-                    <View style={[styles.viewTextBg, {marginTop: 20, marginLeft: 50}]}>
-                        <Text style={{color: '#333333', textAlign: 'center',}}>最新喜来消息在这里显示 > </Text>
-                    </View>
+                    <TouchableOpacity style={[styles.viewTextBg, {marginTop: 20, marginLeft: 50}]}
+                                      onPress={()=> this.props.navigation.navigate('Bluetooth')}>
+                        <Text style={{color: '#333333', textAlign: 'center',}}>蓝牙</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         )
