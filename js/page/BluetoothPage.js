@@ -49,6 +49,10 @@ export default class BluetoothPage extends Component {
         GMBluetooth.disconnect();
     }
 
+
+
+
+
     render() {
 
         const {isEnabled, devices, connectedID, weight} = this.state;
