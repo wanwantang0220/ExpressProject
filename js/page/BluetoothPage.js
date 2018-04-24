@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
-import {View, Text, ScrollView, StyleSheet, Image} from 'react-native';
+import {
+    Text,
+    View,
+    ScrollView
+} from 'react-native';
+import _ from 'underscore';
+
 import GMBluetooth from 'react-native-gm-bluetooth';
 
-
-import _ from 'underscore';
 const {ESC, TSC} = GMBluetooth;
 
 const logError = reason => console.warn('promise error:', reason);
@@ -28,6 +32,46 @@ export default class BluetoothPage extends Component {
         this.handleConnect = this.handleConnect.bind(this);
     }
 
+    initListener() {
+        // 监听是否断开
+        GMBluetooth.on('connectionLost', () => {
+            this.setState({
+                connectedID: null
+            });
+        });
+
+        // 不详细写了， 见https://github.com/rusel1989/react-native-bluetooth-serial
+        GMBluetooth.on('bluetoothEnabled', () => {
+            console.log('bluetoothEnabled')
+        });
+        GMBluetooth.on('bluetoothDisabled', () => {
+            console.log('bluetoothDisabled')
+        });
+        GMBluetooth.on('connectionSuccess', () => {
+            console.log('connectionSuccess')
+        });
+        GMBluetooth.on('connectionFailed', () => {
+            console.log('connectionFailed')
+        });
+        GMBluetooth.on('error', () => {
+            console.log('error')
+        });
+
+
+        GMBluetooth.withDelimiter('=');
+        GMBluetooth.on('read', (obj) => {
+            if (obj && obj.data) {
+                let weight = obj.data.replace('=', '').split('').reverse().join('');
+                weight = Number(weight);
+                if (weight !== this.state.weight) {
+                    this.setState({
+                        weight
+                    });
+                }
+            }
+        });
+    }
+
     componentDidMount() {
         // 判断蓝牙是否可用
         GMBluetooth.isEnabled().then(result => {
@@ -48,68 +92,6 @@ export default class BluetoothPage extends Component {
     componentDidUnMount() {
         GMBluetooth.disconnect();
     }
-
-
-
-
-
-    render() {
-
-        const {isEnabled, devices, connectedID, weight} = this.state;
-
-        return (
-            <View style={{
-                flex: 1
-            }}>
-                <ScrollView style={{
-                    flex: 1
-                }}>
-                    <Text>蓝牙是否可用: {isEnabled ? 'true' : 'false'}</Text>
-
-                    <Text>------------------------</Text>
-
-                    <Text>已配对蓝牙列表（点击可连接）</Text>
-                    {_.map(devices, device => (
-                        <Text
-                            style={{
-                                borderColor: 'grey',
-                                padding: 10,
-                                margin: 5,
-                                borderWidth: 1
-                            }}
-                            key={device.id}
-                            onPress={this.handleConnect.bind(this, device)}
-                        >{device.name} | {device.id}
-                            | {(device.id === connectedID) ? 'connected' : ''}</Text>
-                    ))}
-
-                    <Text>------------------------------------------------</Text>
-
-                    <Text
-                        style={{
-                            padding: 10,
-                            margin: 5
-                        }}>电子秤数： {weight}</Text>
-
-                    <Text>------------------------------------------------</Text>
-
-                    <Text style={{
-                        borderColor: 'grey',
-                        padding: 10,
-                        margin: 5,
-                        borderWidth: 1
-                    }} onPress={this.print}>test print 小票</Text>
-                    <Text style={{
-                        borderColor: 'grey',
-                        padding: 10,
-                        margin: 5,
-                        borderWidth: 1
-                    }} onPress={this.printLabel}>test print 标签</Text>
-                </ScrollView>
-            </View>
-        );
-    }
-
 
     handleConnect(device) {
 
@@ -132,9 +114,6 @@ export default class BluetoothPage extends Component {
             }
         });
     }
-
-
-
 
     print() {
         // 一定要配置好
@@ -252,14 +231,59 @@ export default class BluetoothPage extends Component {
         TSC.sound();
     }
 
+    render() {
+        const {isEnabled, devices, connectedID, weight} = this.state;
 
+        return (
+            <View style={{
+                flex: 1
+            }}>
+                <ScrollView style={{
+                    flex: 1
+                }}>
+                    <Text>蓝牙是否可用: {isEnabled ? 'true' : 'false'}</Text>
 
-}
+                    <Text>------------------------</Text>
 
-const bluetoothSyles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+                    <Text>已配对蓝牙列表（点击可连接）</Text>
+                    {_.map(devices, device => (
+                        <Text
+                            style={{
+                                borderColor: 'grey',
+                                padding: 10,
+                                margin: 5,
+                                borderWidth: 1
+                            }}
+                            key={device.id}
+                            onPress={this.handleConnect.bind(this, device)}
+                        >{device.name} | {device.id}
+                            | {(device.id === connectedID) ? 'connected' : ''}</Text>
+                    ))}
+
+                    <Text>------------------------------------------------</Text>
+
+                    <Text
+                        style={{
+                            padding: 10,
+                            margin: 5
+                        }}>电子秤数： {weight}</Text>
+
+                    <Text>------------------------------------------------</Text>
+
+                    <Text style={{
+                        borderColor: 'grey',
+                        padding: 10,
+                        margin: 5,
+                        borderWidth: 1
+                    }} onPress={this.print}>test print 小票</Text>
+                    <Text style={{
+                        borderColor: 'grey',
+                        padding: 10,
+                        margin: 5,
+                        borderWidth: 1
+                    }} onPress={this.printLabel}>test print 标签</Text>
+                </ScrollView>
+            </View>
+        );
     }
-});
+}
