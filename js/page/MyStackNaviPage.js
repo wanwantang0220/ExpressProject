@@ -8,21 +8,23 @@ import PrintOrderPage from './PrintOrderPage';
 import PrintOrderDetailPage from './PrintOrderDetailPage';
 import TransportDetailPage from "./TransportDetailPage";
 import BluetoothPage from './BluetoothPage';
+import OtherPage from './OtherPage';
+import MapPage from "./MapPage";
 
 const MyStackNaviPage = StackNavigator({
     Home: {
         screen: HomePage,
-        // navigationOptions: ({navigation}) => ({
-        //     headerTitleStyle: {
-        //         alignSelf: 'center',
-        //     },
-        //     headerLeft: (
-        //         <Button
-        //             title='back'
-        //             onPress={() => navigation.navigate('DrawerOpen')}
-        //         />
-        //     ),
-        // }),
+        navigationOptions: ({navigation}) => ({
+            headerTitleStyle: {
+                alignSelf: 'center',
+            },
+            headerLeft: (
+                <Button
+                    title='back'
+                    onPress={() => navigation.navigate('DrawerOpen')}
+                />
+            ),
+        }),
 
     },
     Third: {
@@ -53,6 +55,9 @@ const MyStackNaviPage = StackNavigator({
     },
     Bluetooth: {
         screen: BluetoothPage
+    },
+    Maps: {
+        screen: MapPage
     }
 })
 

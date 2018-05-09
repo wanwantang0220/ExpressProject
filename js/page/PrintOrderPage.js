@@ -7,7 +7,8 @@ export default class PrintOrderPage extends Component {
 
 
     static navigationOptions = {
-        header: null,
+        title: '待打单',
+        // header: null,
     }
 
     constructor(props) {
@@ -21,7 +22,7 @@ export default class PrintOrderPage extends Component {
 
         return (
             <View style={printStyles.printcontainer}>
-                <HeaderTitle title='待打单' onBack={() => this.props.navigation.goBack()}/>
+                {/*<HeaderTitle title='待打单' onBack={() => this.props.navigation.goBack()}/>*/}
                 <View style={[printStyles.itemBg, {flexDirection: 'column'}]}>
 
                     <View style={{flex: 5, flexDirection: 'row'}}>
@@ -52,7 +53,7 @@ export default class PrintOrderPage extends Component {
                         style={{flex: 1}}
                         activeOpacity={0.85}
                         underlayColor='white'
-                        onPress={()=>{
+                        onPress={() => {
                             //蓝牙
                         }}>
                         <Text style={[printStyles.text4]}>蓝牙</Text>

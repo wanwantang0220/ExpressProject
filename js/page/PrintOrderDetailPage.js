@@ -14,6 +14,7 @@ import {
 
 
 const {width, height} = Dimensions.get('window');
+
 export default class PrintOrderDetailPage extends Component {
 
 

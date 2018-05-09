@@ -40,6 +40,8 @@
 		5A2E924A0B5542F89C29AADB /* libRCTBluetoothSerial.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B28B9A087A743FCAC8395AD /* libRCTBluetoothSerial.a */; };
 		74447A0C776B4EDD9D05C5FE /* libRCTToast.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E75A541D234EE48978B915 /* libRCTToast.a */; };
 		BBEF3BB9DA27491B9F6F19F1 /* libRCTUmengAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB578A6A16A48F28A74802C /* libRCTUmengAnalytics.a */; };
+		A78A063F5B8F4DD89B17E78B /* libRCTAMap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3489C8FD49694B4CBD0EB215 /* libRCTAMap.a */; };
+		3136CE0711774257858DDFC1 /* libRNToastNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8A526EAAB34603B64DE3C3 /* libRNToastNative.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -351,6 +353,10 @@
 		97E75A541D234EE48978B915 /* libRCTToast.a */ = {isa = PBXFileReference; name = "libRCTToast.a"; path = "libRCTToast.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		6A7A59DCAD5C4BDD8EB9C782 /* RCTUmengAnalytics.xcodeproj */ = {isa = PBXFileReference; name = "RCTUmengAnalytics.xcodeproj"; path = "../node_modules/react-native-umeng-analytics/ios/RCTUmengAnalytics.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		9BB578A6A16A48F28A74802C /* libRCTUmengAnalytics.a */ = {isa = PBXFileReference; name = "libRCTUmengAnalytics.a"; path = "libRCTUmengAnalytics.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		77C5CBDF90C649CEAA803C1C /* RCTAMap.xcodeproj */ = {isa = PBXFileReference; name = "RCTAMap.xcodeproj"; path = "../node_modules/react-native-smart-amap/ios/RCTAMap/RCTAMap.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		3489C8FD49694B4CBD0EB215 /* libRCTAMap.a */ = {isa = PBXFileReference; name = "libRCTAMap.a"; path = "libRCTAMap.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		BA19909123BF44F68EEDBD26 /* RNToastNative.xcodeproj */ = {isa = PBXFileReference; name = "RNToastNative.xcodeproj"; path = "../node_modules/react-native-toast-native/ios/RNToastNative.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		4B8A526EAAB34603B64DE3C3 /* libRNToastNative.a */ = {isa = PBXFileReference; name = "libRNToastNative.a"; path = "libRNToastNative.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,6 +388,8 @@
 				5A2E924A0B5542F89C29AADB /* libRCTBluetoothSerial.a in Frameworks */,
 				74447A0C776B4EDD9D05C5FE /* libRCTToast.a in Frameworks */,
 				BBEF3BB9DA27491B9F6F19F1 /* libRCTUmengAnalytics.a in Frameworks */,
+				A78A063F5B8F4DD89B17E78B /* libRCTAMap.a in Frameworks */,
+				3136CE0711774257858DDFC1 /* libRNToastNative.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,6 +579,8 @@
 				225E253146BF43F4A1D63045 /* RCTBluetoothSerial.xcodeproj */,
 				48B33E0333E4407CAD932CD4 /* RCTToast.xcodeproj */,
 				6A7A59DCAD5C4BDD8EB9C782 /* RCTUmengAnalytics.xcodeproj */,
+				77C5CBDF90C649CEAA803C1C /* RCTAMap.xcodeproj */,
+				BA19909123BF44F68EEDBD26 /* RNToastNative.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1200,12 +1210,16 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-bluetooth-serial\ios\RCTBluetoothSerial",
 					"$(SRCROOT)\..\node_modules\@remobile\react-native-toast\ios\RCTToast",
 					"$(SRCROOT)\..\node_modules\react-native-umeng-analytics\ios\RCTUmengAnalytics/**",
+					"$(SRCROOT)\..\node_modules\react-native-smart-amap\ios\RCTAMap\RCTAMap/**",
+					"$(SRCROOT)\..\node_modules\react-native-toast-native\ios",
 				);
 			};
 			name = Debug;
@@ -1229,12 +1243,16 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-bluetooth-serial\ios\RCTBluetoothSerial",
 					"$(SRCROOT)\..\node_modules\@remobile\react-native-toast\ios\RCTToast",
 					"$(SRCROOT)\..\node_modules\react-native-umeng-analytics\ios\RCTUmengAnalytics/**",
+					"$(SRCROOT)\..\node_modules\react-native-smart-amap\ios\RCTAMap\RCTAMap/**",
+					"$(SRCROOT)\..\node_modules\react-native-toast-native\ios",
 				);
 			};
 			name = Release;
@@ -1259,6 +1277,8 @@
 					"$(SRCROOT)\..\node_modules\react-native-bluetooth-serial\ios\RCTBluetoothSerial",
 					"$(SRCROOT)\..\node_modules\@remobile\react-native-toast\ios\RCTToast",
 					"$(SRCROOT)\..\node_modules\react-native-umeng-analytics\ios\RCTUmengAnalytics/**",
+					"$(SRCROOT)\..\node_modules\react-native-smart-amap\ios\RCTAMap\RCTAMap/**",
+					"$(SRCROOT)\..\node_modules\react-native-toast-native\ios",
 				);
 			};
 			name = Debug;
@@ -1282,6 +1302,8 @@
 					"$(SRCROOT)\..\node_modules\react-native-bluetooth-serial\ios\RCTBluetoothSerial",
 					"$(SRCROOT)\..\node_modules\@remobile\react-native-toast\ios\RCTToast",
 					"$(SRCROOT)\..\node_modules\react-native-umeng-analytics\ios\RCTUmengAnalytics/**",
+					"$(SRCROOT)\..\node_modules\react-native-smart-amap\ios\RCTAMap\RCTAMap/**",
+					"$(SRCROOT)\..\node_modules\react-native-toast-native\ios",
 				);
 			};
 			name = Release;
@@ -1314,12 +1336,16 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-bluetooth-serial\ios\RCTBluetoothSerial",
 					"$(SRCROOT)\..\node_modules\@remobile\react-native-toast\ios\RCTToast",
 					"$(SRCROOT)\..\node_modules\react-native-umeng-analytics\ios\RCTUmengAnalytics/**",
+					"$(SRCROOT)\..\node_modules\react-native-smart-amap\ios\RCTAMap\RCTAMap/**",
+					"$(SRCROOT)\..\node_modules\react-native-toast-native\ios",
 				);
 			};
 			name = Debug;
@@ -1352,12 +1378,16 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-bluetooth-serial\ios\RCTBluetoothSerial",
 					"$(SRCROOT)\..\node_modules\@remobile\react-native-toast\ios\RCTToast",
 					"$(SRCROOT)\..\node_modules\react-native-umeng-analytics\ios\RCTUmengAnalytics/**",
+					"$(SRCROOT)\..\node_modules\react-native-smart-amap\ios\RCTAMap\RCTAMap/**",
+					"$(SRCROOT)\..\node_modules\react-native-toast-native\ios",
 				);
 			};
 			name = Release;
@@ -1389,12 +1419,16 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-bluetooth-serial\ios\RCTBluetoothSerial",
 					"$(SRCROOT)\..\node_modules\@remobile\react-native-toast\ios\RCTToast",
 					"$(SRCROOT)\..\node_modules\react-native-umeng-analytics\ios\RCTUmengAnalytics/**",
+					"$(SRCROOT)\..\node_modules\react-native-smart-amap\ios\RCTAMap\RCTAMap/**",
+					"$(SRCROOT)\..\node_modules\react-native-toast-native\ios",
 				);
 			};
 			name = Debug;
@@ -1426,12 +1460,16 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-bluetooth-serial\ios\RCTBluetoothSerial",
 					"$(SRCROOT)\..\node_modules\@remobile\react-native-toast\ios\RCTToast",
 					"$(SRCROOT)\..\node_modules\react-native-umeng-analytics\ios\RCTUmengAnalytics/**",
+					"$(SRCROOT)\..\node_modules\react-native-smart-amap\ios\RCTAMap\RCTAMap/**",
+					"$(SRCROOT)\..\node_modules\react-native-toast-native\ios",
 				);
 			};
 			name = Release;

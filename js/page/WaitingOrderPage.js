@@ -25,7 +25,8 @@ export default class WaitingOrderPage extends Component {
 
 
     static navigationOptions = {
-        header: null,
+        title:'待接单',
+        // header: null,
     }
 
     constructor(props) {
@@ -38,7 +39,7 @@ export default class WaitingOrderPage extends Component {
 
         return (
             <View style={styles.waitordercontainer}>
-                <HeaderTitle title='待接单'  onBack={()=> this.props.navigation.goBack()}/>
+                {/*<HeaderTitle title='待接单'  onBack={()=> this.props.navigation.goBack()}/>*/}
                 <View style={[styles.itemBg, {flexDirection: 'row'}]}>
                     <View style={[styles.height100, styles.part_1_left]}>
                         <View style={{flex: 5}}>
