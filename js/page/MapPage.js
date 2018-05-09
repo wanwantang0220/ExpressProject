@@ -20,8 +20,9 @@ export default class MapPage extends Component {
 
     componentWillMount() {
         Geolocation.init({
+            //TODO ios的要改
             ios: "9bd6c82e77583020a73ef1af59d0c759",
-            android: "0cdbd52ec3bc36b334df76fdcf493d7b"
+            android: "6b17f0cf8555b3ff74423fe630ec4e31"
         })
     }
 
@@ -56,14 +57,12 @@ export default class MapPage extends Component {
                         title="停止定位"
                     />
                 </View>
-                <View style={style.controls}>
-                    {Object.keys(location).map(key => (
-                        <View style={style.item} key={key}>
-                            <Text style={style.label}>{key}</Text>
-                            <Text>{location[key]}</Text>
-                        </View>
-                    ))}
-                </View>
+                {Object.keys(location).map(key => (
+                    <View style={style.item} key={key}>
+                        <Text style={style.label}>{key}</Text>
+                        <Text>{location[key]}</Text>
+                    </View>
+                ))}
             </View>
         )
     }

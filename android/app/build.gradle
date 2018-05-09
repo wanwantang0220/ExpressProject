@@ -116,11 +116,12 @@ android {
         }
     }
     buildTypes {
-        release {
-            minifyEnabled enableProguardInReleaseBuilds
-            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-        }
+          release {
+              minifyEnabled enableProguardInReleaseBuilds
+              proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+          }
     }
+
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
@@ -143,6 +144,7 @@ dependencies {
     compile project(':react-native-gm-bluetooth')
     compile project(':react-native-toast-native')
     compile project(':react-native-amap-geolocation')
+
 
 
 }
