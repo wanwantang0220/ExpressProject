@@ -3,8 +3,10 @@ package com.expressproject;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import cn.qiuxiang.react.geolocation.AMapGeolocationPackage;
 import com.toast.RCTToastPackage;
+import com.gm.RCTGMBluetooth.RCTGMBluetoothPackage;
+import cn.jpush.reactnativejpush.JPushPackage;
+import cn.qiuxiang.react.geolocation.AMapGeolocationPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -26,9 +28,10 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new AMapGeolocationPackage(),
             new RCTToastPackage(),
-            new RCTGMBluetoothPackage()
+            new RCTGMBluetoothPackage(),
+            new AMapGeolocationPackage(),
+            new JPushPackage(!BuildConfig.DEBUG, !BuildConfig.DEBUG)
       );
     }
 

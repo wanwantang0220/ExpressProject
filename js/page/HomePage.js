@@ -147,14 +147,16 @@ export default class HomePage extends Component {
                             color: '#333333'
                         }}>高德地图</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[styles.viewBg, {flex: 1, marginLeft: 10, marginRight: 15}]}>
+                    <TouchableOpacity
+                        style={[styles.viewBg, {flex: 1, marginLeft: 10, marginRight: 15}]}
+                        onPress={() => this.props.navigation.navigate('JPush')}>
                         <Text style={{
                             marginLeft: 15,
                             marginTop: 15,
                             fontSize: 20,
                             fontWeight: 'bold',
                             color: '#333333'
-                        }}>下单</Text>
+                        }}>极光推送</Text>
                         <Text style={{marginLeft: 15, marginTop: 5, fontSize: 14, color: '#7A7A7A'}}>10</Text>
                     </TouchableOpacity>
                 </View>

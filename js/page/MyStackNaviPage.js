@@ -10,6 +10,7 @@ import TransportDetailPage from "./TransportDetailPage";
 import BluetoothPage from './BluetoothPage';
 import OtherPage from './OtherPage';
 import MapPage from "./MapPage";
+import JPushPage from "./JPushPage";
 
 const MyStackNaviPage = StackNavigator({
     Home: {
@@ -58,6 +59,9 @@ const MyStackNaviPage = StackNavigator({
     },
     Maps: {
         screen: MapPage
+    },
+    JPush:{
+        screen:JPushPage
     }
 })
 

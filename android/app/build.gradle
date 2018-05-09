@@ -103,6 +103,11 @@ android {
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
+        manifestPlaceholders = [
+                JPUSH_APPKEY: "e4c49d46e3caba7ff62e44c9",
+                APP_CHANNEL : "developer-default"
+        ]
+
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
@@ -138,6 +143,11 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-toast-native')
+    compile project(':react-native-gm-bluetooth')
+    compile project(':react-native-amap-geolocation')
+    compile project(':jpush-react-native')  // 添加 jpush 依赖
+    compile project(':jcore-react-native')  // 添加 jcore 依赖
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile "com.android.support:appcompat-v7:23.0.1"
     compile "com.facebook.react:react-native:+"  // From node_modules
