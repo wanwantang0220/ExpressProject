@@ -11,6 +11,7 @@ import BluetoothPage from './BluetoothPage';
 import OtherPage from './OtherPage';
 import MapPage from "./MapPage";
 import JPushPage from "./JPushPage";
+import AlipayPage from "./AlipayPage";
 
 const MyStackNaviPage = StackNavigator({
     Home: {
@@ -62,6 +63,9 @@ const MyStackNaviPage = StackNavigator({
     },
     JPush:{
         screen:JPushPage
+    },
+    AliPay:{
+        screen:AlipayPage
     }
 })
 

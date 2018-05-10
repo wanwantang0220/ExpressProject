@@ -154,7 +154,7 @@ dependencies {
     compile project(':react-native-gm-bluetooth')
     compile project(':react-native-toast-native')
     compile project(':react-native-amap-geolocation')
-
+    compile files('libs/alipaySdk-20180403.jar')
 
 
 }

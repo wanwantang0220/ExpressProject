@@ -1,8 +1,11 @@
 package com.expressproject;
 
 import com.facebook.react.ReactActivity;
+import android.app.Activity;
 
 public class MainActivity extends ReactActivity {
+
+    private static Activity mCurrentMainActivity = null;
 
     @Override
     public void onResume() {
@@ -22,5 +25,10 @@ public class MainActivity extends ReactActivity {
     @Override
     protected String getMainComponentName() {
         return "ExpressProject";
+    }
+
+    public static Activity getActivity() {
+         Activity activity = mCurrentMainActivity;
+         return activity;
     }
 }

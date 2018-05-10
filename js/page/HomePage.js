@@ -118,7 +118,7 @@ export default class HomePage extends Component {
                         <Text style={{marginLeft: 15, marginTop: 15, color: '#7A7A7A'}}>......</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
-                        style={[styles.viewBg, {flex: 1, marginLeft: 10, marginRight: 15}]}
+                        style={[styles.viewBg, {flex: 1, marginLeft: 10, marginRight: 10}]}
                         activeOpacity={0.85}
                         underlayColor='white'
                         onPress={() => this.props.navigation.navigate('PrintOrder')}>
@@ -129,6 +129,22 @@ export default class HomePage extends Component {
                             fontWeight: 'bold',
                             color: '#333333'
                         }}>打单</Text>
+                        <Text style={{marginLeft: 15, marginTop: 5, fontSize: 14, color: '#7A7A7A'}}>1/10</Text>
+                        <Text style={{marginLeft: 15, marginTop: 15, color: '#7A7A7A'}}>......</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                        style={[styles.viewBg, {flex: 1, marginRight: 15}]}
+                        activeOpacity={0.85}
+                        underlayColor='white'
+                        onPress={() => this.props.navigation.navigate('AliPay')}>
+                        <Text style={{
+                            marginLeft: 15,
+                            marginTop: 15,
+                            fontSize: 20,
+                            fontWeight: 'bold',
+                            color: '#333333'
+                        }}>支付宝支付</Text>
                         <Text style={{marginLeft: 15, marginTop: 5, fontSize: 14, color: '#7A7A7A'}}>1/10</Text>
                         <Text style={{marginLeft: 15, marginTop: 15, color: '#7A7A7A'}}>......</Text>
                     </TouchableOpacity>

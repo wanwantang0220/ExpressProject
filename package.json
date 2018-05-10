@@ -23,7 +23,8 @@
     "react-native-toast-native": "^1.2.1",
     "react-navigation": "^1.5.11",
     "stream": "0.0.2",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "axios": "^0.17.1"
   },
   "devDependencies": {
     "babel-jest": "22.4.3",
