@@ -56,7 +56,7 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
-    UMConfigure.init(this, "5af54160b27b0a1c500000d0", "360", UMConfigure.DEVICE_TYPE_PHONE, null);
+    UMConfigure.init(this, "5af54160b27b0a1c500000d0", "UMENG", UMConfigure.DEVICE_TYPE_PHONE, null);
     MobclickAgent.openActivityDurationTrack(false);
   }
 }

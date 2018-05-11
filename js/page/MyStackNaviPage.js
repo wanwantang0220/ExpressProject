@@ -12,6 +12,7 @@ import OtherPage from './OtherPage';
 import MapPage from "./MapPage";
 import JPushPage from "./JPushPage";
 import AlipayPage from "./AlipayPage";
+import UmengPage from "./UmengPage";
 
 const MyStackNaviPage = StackNavigator({
     Home: {
@@ -61,11 +62,14 @@ const MyStackNaviPage = StackNavigator({
     Maps: {
         screen: MapPage
     },
-    JPush:{
-        screen:JPushPage
+    JPush: {
+        screen: JPushPage
     },
-    AliPay:{
-        screen:AlipayPage
+    AliPay: {
+        screen: AlipayPage
+    },
+    Umeng: {
+        screen: UmengPage
     }
 })
 

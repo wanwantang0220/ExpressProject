@@ -175,6 +175,18 @@ export default class HomePage extends Component {
                         }}>极光推送</Text>
                         <Text style={{marginLeft: 15, marginTop: 5, fontSize: 14, color: '#7A7A7A'}}>10</Text>
                     </TouchableOpacity>
+                    <TouchableOpacity
+                        style={[styles.viewBg, {flex: 1, marginRight: 10}]}
+                        onPress={() => this.props.navigation.navigate('Umeng')}>
+                        <Text style={{
+                            marginLeft: 15,
+                            marginTop: 15,
+                            fontSize: 20,
+                            fontWeight: 'bold',
+                            color: '#333333'
+                        }}>友盟统计</Text>
+                        <Text style={{marginLeft: 15, marginTop: 5, fontSize: 14, color: '#7A7A7A'}}>10</Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={{width: width, flexDirection: 'row'}}>
                     <TouchableOpacity style={[styles.viewTextBg, {marginTop: 20, marginLeft: 50}]}

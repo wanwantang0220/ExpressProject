@@ -2,6 +2,8 @@ package com.expressproject;
 
 import com.facebook.react.ReactActivity;
 import android.app.Activity;
+import com.umeng.analytics.MobclickAgent;
+import com.umeng.commonsdk.UMConfigure;
 
 public class MainActivity extends ReactActivity {
 
