@@ -1,4 +1,6 @@
 rootProject.name = 'ExpressProject'
+include ':react-native-umeng-analytics'
+project(':react-native-umeng-analytics').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-umeng-analytics/android')
 include ':react-native-toast-native'
 project(':react-native-toast-native').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-toast-native/android')
 include ':react-native-gm-bluetooth'

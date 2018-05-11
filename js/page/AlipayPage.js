@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
-import {View, Text, TouchableOpacity, TouchableHighlight, StyleSheet, Image} from 'react-native';
+import {View, Text, TouchableOpacity, TouchableHighlight, StyleSheet, Image, Dimensions} from 'react-native';
 import Alipay from '../util/Alipay';
+
 import axios from 'axios';
+
+const {width, height} = Dimensions.get('window');
 
 export default class AlipayPage extends Component {
 
