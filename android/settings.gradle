@@ -1,3 +1,15 @@
 rootProject.name = 'ExpressProject'
+include ':react-native-umeng-analytics'
+project(':react-native-umeng-analytics').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-umeng-analytics/android')
+include ':react-native-toast-native'
+project(':react-native-toast-native').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-toast-native/android')
+include ':react-native-gm-bluetooth'
+project(':react-native-gm-bluetooth').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-gm-bluetooth/android')
+include ':react-native-amap-geolocation'
+project(':react-native-amap-geolocation').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-amap-geolocation/lib/android')
+include ':jpush-react-native'
+project(':jpush-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/jpush-react-native/android')
+include ':jcore-react-native'
+project(':jcore-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/jcore-react-native/android')
 
 include ':app'
